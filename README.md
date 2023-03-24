@@ -6,6 +6,6 @@
 
 ### Tech Stack - 
 - ReactJs
-- Socketio
+- SocketIo
 - CodeMirror
 - ExpressJs
