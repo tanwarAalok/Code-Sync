@@ -59,6 +59,8 @@ footer a {
     transition: all 0.3s ease-in-out;
 }
 
+
+
 .joinBtn,
 .leaveBtn {
     background: #4aed88;
@@ -77,6 +79,7 @@ footer a {
 }
 
 .createNewBtn {
+    cursor: pointer;
     color: #4aed88;
     text-decoration: none;
     border-bottom: 1px solid #4aed88;
@@ -89,6 +92,8 @@ footer a:hover {
     border-color: #368654;
 }
 
+/* ******************************************************** */
+
 .mainWrap {
     display: grid;
     grid-template-columns: 230px 1fr;
@@ -100,6 +105,7 @@ footer a:hover {
     color: #fff;
     display: flex;
     flex-direction: column;
+    height: calc(100vh - 40px);
 }
 .asideInner {
     flex: 1;
@@ -135,9 +141,42 @@ footer a:hover {
     width: 100%;
     margin-top: 20px;
 }
+
 .CodeMirror {
-    min-height: calc(100vh - 20px);
+    min-height: calc(100vh - 235px);
     font-size: 20px;
     line-height: 1.6;
     padding-top: 20px;
 }
+
+/* ******************* CodeRun component********************** */
+
+.inputOutputWrap{
+    height: 185px;
+    margin-left: 10px;
+}
+.inputOutputWrap > textarea{
+    height: 70%;
+    width: 98%;
+    background-color: #2f2f3d;
+    border: 1px solid grey;
+    font-size: 16px;
+    padding: 10px;
+    color: white;
+}
+
+.btnWrap{
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* gap: 10px; */
+}
+
+.btnWrap > div > button, select{
+    padding: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+

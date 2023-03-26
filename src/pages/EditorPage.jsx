@@ -5,6 +5,7 @@ import { initSocket } from '../socket';
 import ACTIONS from '../Actions';
 import { Navigate, useLocation, useNavigate, useParams } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import CodeRun from '../components/CodeRun';
 
 const EditorPage = () => {
   const codeRef = useRef(null);
@@ -82,31 +83,39 @@ const EditorPage = () => {
   }
 
   return (
-    <div className='mainWrap'>
+    <div className="mainWrap">
       <div className="aside">
         <div className="asideInner">
           <div className="logo">
-            <img src="/code-sync.png" alt="logo" className='logoImage'/>
+            <img src="/code-sync.png" alt="logo" className="logoImage" />
           </div>
           <h3>Connected</h3>
           <div className="clientsList">
-            {
-              clients.map((client) => (
-                <Client key={client.socketId} username={client.username} />
-              ))
-            }
+            {clients.map((client) => (
+              <Client key={client.socketId} username={client.username} />
+            ))}
           </div>
         </div>
 
-        <button className='btn copyBtn' onClick={copyRoomId} >Copy ROOM ID</button>
-        <button className='btn leaveBtn' onClick={leaveRoom} >Leave</button>
-
+        <button className="btn copyBtn" onClick={copyRoomId}>
+          Copy ROOM ID
+        </button>
+        <button className="btn leaveBtn" onClick={leaveRoom}>
+          Leave
+        </button>
       </div>
       <div className="editorWrap">
-        <Editor socketRef={socketRef} roomId={roomId} onCodeChange={(code) => { codeRef.current = code; }} />
+        <Editor
+          socketRef={socketRef}
+          roomId={roomId}
+          onCodeChange={(code) => {
+            codeRef.current = code;
+          }}
+        />
+        <CodeRun codeRef={codeRef} />
       </div>
     </div>
-  )
+  );
 }
 
 export default EditorPage;
